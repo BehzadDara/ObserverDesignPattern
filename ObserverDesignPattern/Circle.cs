@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace ObserverDesignPattern
+﻿namespace ObserverDesignPattern
 {
     public class Circle : Shape
     {
@@ -13,15 +11,6 @@ namespace ObserverDesignPattern
                 radius = value;
                 NotifyObservers();
             }
-        }
-
-        public override string GetInfo()
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            return JsonSerializer.Serialize(this, options);
         }
     }
 }

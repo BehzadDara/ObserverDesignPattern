@@ -21,6 +21,13 @@ namespace ObserverDesignPattern
             Observers.ForEach(x => x.Notify(this));
         }
 
-        public abstract string GetInfo();
+        public string GetInfo()
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            return JsonSerializer.Serialize(this, GetType(), options);
+        }
     }
 }
