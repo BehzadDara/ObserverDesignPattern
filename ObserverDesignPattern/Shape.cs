@@ -1,4 +1,6 @@
-﻿namespace ObserverDesignPattern
+﻿using System.Text.Json;
+
+namespace ObserverDesignPattern
 {
     public abstract class Shape : IShapeObservable
     {
@@ -20,6 +22,5 @@
         }
 
         public abstract string GetInfo();
-
     }
 }

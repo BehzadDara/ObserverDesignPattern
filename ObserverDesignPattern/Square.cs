@@ -1,4 +1,6 @@
-﻿namespace ObserverDesignPattern
+﻿using System.Text.Json;
+
+namespace ObserverDesignPattern
 {
     public class Square : Shape
     {
@@ -15,7 +17,11 @@
 
         public override string GetInfo()
         {
-            return $"sideLength = {SideLength}";
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            return JsonSerializer.Serialize(this, options);
         }
     }
 }
